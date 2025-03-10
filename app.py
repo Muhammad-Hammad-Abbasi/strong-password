@@ -9,7 +9,7 @@ st.markdown(
     }
 
     h1 {
-     color: #D2B48C;
+     color: #D2B48C !important;
     }
     
     /* Targeting Streamlit Button */
