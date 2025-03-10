@@ -1,9 +1,40 @@
 import re
 import streamlit as st
 
+st.markdown(
+    """
+    <style>
+    .stApp{
+     background: #996515;
+    }
+
+    h1 {
+     color: #D2B48C;
+    }
+    
+    /* Targeting Streamlit Button */
+    div.stButton > button {
+        color: #D2B48C !important;
+        border-radius: 5px !important;
+        padding: 10px 20px !important;
+        font-size: 16px !important;
+        border: none !important;
+    }
+
+    /* Hover Effect */
+    div.stButton > button:hover {
+        background-color: #D2B48C !important; /* Darker shade on hover */
+        color: #ffffff !important;
+    }
+    
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("🔐 Password Strength Checker!")
-st.write("Enter your password below to check its strength.")
-st.write("Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.")
+st.write("♠ Enter your password below to check its strength.")
+st.write("♠ Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.")
 st.write("")
 
 
@@ -51,8 +82,7 @@ def check_password_strength(password):
 password = st.text_input("Enter your password: ",type="password")
 
 if "button_clicked" not in st.session_state:
-    st.session_state.button_clicked = False
-
+    st.session_state.button_clicked = False 
 
 if st.button("Check strength"):
     st.session_state.button_clicked = True
